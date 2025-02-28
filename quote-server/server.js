@@ -16,7 +16,12 @@ app.get("/", (request, response) => {
 });
 
 //START OF YOUR CODE...
-
+app.get("/quotes", (request, response) => {
+  response.json(quotes);
+});
+app.get("/quotes/random", (request, response) => {
+  response.json(pickFromArray(quotes));
+});
 //...END OF YOUR CODE
 
 //You can use this function to pick one element at random from a given array
