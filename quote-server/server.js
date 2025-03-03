@@ -2,7 +2,7 @@
 // This is where your node app starts
 
 //load the 'express' module which makes writing webservers easy
-import express from "express";
+import express, { request } from "express";
 //load the quotes JSON
 import quotes from "./quotes.json" assert { type: "json" };
 
@@ -34,4 +34,15 @@ const pickFromArray = (arrayofQuotes) =>
 //Start our server so that it listens for HTTP requests!
 const listener = app.listen(3001, () => {
   console.log("Your app is listening on port " + listener.address().port);
+});
+
+app.get("/quotes/search", (request, response) => {
+  const term = request.query.term?.toLowerCase();
+  if (!term) {
+    return response.json([]);
+  }
+  const filterQ = quotes.filter(q=>
+    q.quote?.toLowerCase().includes(term) || q.author?.toLowerCase().includes(term)
+  );
+  response.json(filterQ);
 });
