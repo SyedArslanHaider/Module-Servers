@@ -11,7 +11,7 @@
     "hotel-bookings-api"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./quote-server/server.js"
   },
   "repository": {
     "type": "git",
