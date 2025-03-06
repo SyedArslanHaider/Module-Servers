@@ -3,7 +3,7 @@
 
 //load the 'express' module which makes writing webservers easy
 import express, { request } from "express";
-import cors from "core";
+import cors from "cors";
 //load the quotes JSON
 import quotes from "./quotes.json" assert { type: "json" };
 
