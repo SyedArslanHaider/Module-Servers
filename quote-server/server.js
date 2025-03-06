@@ -9,7 +9,7 @@ import quotes from "./quotes.json" assert { type: "json" };
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173/', 'https://quote-react-sah.netlify.app/'],
+  origin: ['http://localhost:5173', 'https://quote-react-sah.netlify.app'],
   methods: ['GET', 'POST', 'OPTIONS'], 
   allowedHeaders: ['Content-Type'], 
 }));
