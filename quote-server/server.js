@@ -8,8 +8,9 @@ import cors from "cors";
 import quotes from "./quotes.json" assert { type: "json" };
 
 const app = express();
-app.use(cors()); // Allow all origins
-
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://quote-react-sah.netlify.app/'],
+}));
 // Now register handlers for some routes:
 //   /                  - Return some helpful welcome info (text)
 //   /quotes            - Should return all quotes (json)
