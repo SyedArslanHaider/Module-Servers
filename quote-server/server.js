@@ -3,10 +3,12 @@
 
 //load the 'express' module which makes writing webservers easy
 import express, { request } from "express";
+import cors from "core";
 //load the quotes JSON
 import quotes from "./quotes.json" assert { type: "json" };
 
 const app = express();
+app.use(cors());
 // Now register handlers for some routes:
 //   /                  - Return some helpful welcome info (text)
 //   /quotes            - Should return all quotes (json)
