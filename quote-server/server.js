@@ -8,7 +8,9 @@ import cors from "cors";
 import quotes from "./quotes.json" assert { type: "json" };
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // Or use '*' to allow all origins
+}));
 // Now register handlers for some routes:
 //   /                  - Return some helpful welcome info (text)
 //   /quotes            - Should return all quotes (json)
